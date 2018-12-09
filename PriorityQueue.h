@@ -3,7 +3,7 @@
 
 #include "../generic_component/Sort.h"
 
-namespace MyDataSturct
+namespace MyDataStruct
 {
 	template<class T>
 	class PriorityQueue
@@ -16,6 +16,7 @@ namespace MyDataSturct
 		void pop();
 		int size();
 		bool empty();
+		void clear();
 	private:
 		T * mem_;
 		int size_;
@@ -47,7 +48,7 @@ namespace MyDataSturct
 			for (int i = 0; i < max_size_; ++i) {
 				temp[i] = mem_[i];
 			}
-			delete[] mem;
+			delete[] mem_;
 			mem_ = temp;
 			max_size_ *= 2;
 		}
@@ -67,7 +68,7 @@ namespace MyDataSturct
 	inline void PriorityQueue<T>::pop()
 	{
 		--size_;
-		swap(mem_[0], mem[size_]);
+		swap(mem_[0], mem_[size_]);
 		int k = 0;
 		while (k < size_) {
 			int temp = k;
@@ -97,6 +98,11 @@ namespace MyDataSturct
 	inline bool PriorityQueue<T>::empty()
 	{
 		return size_ == 0;
+	}
+	template<class T>
+	inline void PriorityQueue<T>::clear()
+	{
+		size_ = 0;
 	}
 }
 
