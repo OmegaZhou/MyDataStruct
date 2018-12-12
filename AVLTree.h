@@ -115,7 +115,11 @@ namespace MyDataStruct
 	template<class T>
 	inline typename AVLTree<T>::iterator AVLTree<T>::begin() const
 	{
-		return iterator(root_);
+		AVLTreeNode<T>* temp = root_;
+		while (temp&&temp->left_) {
+			temp = temp->left_;
+		}
+		return iterator(temp);
 	}
 
 	template<class T>
