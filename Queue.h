@@ -8,6 +8,7 @@ namespace MyDataStruct
 	template<class T>
 	class Queue
 	{
+	public:
 		Queue() = default;
 		const T& top() const;
 		void push(const T& t);
