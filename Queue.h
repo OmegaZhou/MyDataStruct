@@ -1,21 +1,25 @@
-#include "../generic_component/List.h"
 #ifndef QUEUE_H_
 #define QUEUE_H_
+
+#include "../generic_component/List.h"
+
 namespace MyDataStruct
 {
 	template<class T>
 	class Queue
 	{
 		Queue() = default;
-		T top();
+		const T& top() const;
 		void push(const T& t);
 		void pop();
-		bool empty();
+		bool empty() const;
+		void clear();
+		int size() const;
 	private:
 		List<T> data_;
 	};
 	template<class T>
-	inline T Queue<T>::top()
+	inline const T& Queue<T>::top() const
 	{
 		return *data_.begin();
 	}
@@ -30,9 +34,19 @@ namespace MyDataStruct
 		data_.erase(data_.begin());
 	}
 	template<class T>
-	inline bool Queue<T>::empty()
+	inline bool Queue<T>::empty() const
 	{
 		return data_.empty();
+	}
+	template<class T>
+	inline void Queue<T>::clear()
+	{
+		data_.clear();
+	}
+	template<class T>
+	inline int Queue<T>::size() const
+	{
+		return data_.size();
 	}
 }
 #endif // !QUEUE_H_

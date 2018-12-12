@@ -11,11 +11,11 @@ namespace MyDataStruct
 	public:
 		PriorityQueue();
 		~PriorityQueue();
-		T& top();
+		const T& top() const;
 		void push(const T& val);
 		void pop();
-		int size();
-		bool empty();
+		int size() const;
+		bool empty() const;
 		void clear();
 	private:
 		T * mem_;
@@ -36,7 +36,7 @@ namespace MyDataStruct
 		mem_ = nullptr;
 	}
 	template<class T>
-	inline T & PriorityQueue<T>::top()
+	inline const T & PriorityQueue<T>::top() const
 	{
 		return mem_[0];
 	}
@@ -90,12 +90,12 @@ namespace MyDataStruct
 		}
 	}
 	template<class T>
-	inline int PriorityQueue<T>::size()
+	inline int PriorityQueue<T>::size() const
 	{
 		return size_;
 	}
 	template<class T>
-	inline bool PriorityQueue<T>::empty()
+	inline bool PriorityQueue<T>::empty() const
 	{
 		return size_ == 0;
 	}

@@ -1,7 +1,9 @@
 #ifndef LIST_H_
 #define LIST_H_
+
 #include <iterator>
 #include <iostream>
+
 namespace MyDataStruct
 {
 	//A node of the list;

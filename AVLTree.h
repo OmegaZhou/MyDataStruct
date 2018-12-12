@@ -58,8 +58,8 @@ namespace MyDataStruct
 	template<class T>
 	class AVLTree
 	{
-		typedef AVLIterator<T> iterator;
 	public:
+		typedef AVLIterator<T> iterator;
 		AVLTree();
 		~AVLTree();
 		void insert(const T& val);
@@ -70,6 +70,7 @@ namespace MyDataStruct
 		iterator find(const T& val) const;
 		void clear();
 		int size() const;
+		bool empty() const;
 	private:
 		AVLTreeNode<T>* root_;
 		int size_;
@@ -154,6 +155,12 @@ namespace MyDataStruct
 	inline int AVLTree<T>::size() const
 	{
 		return size_;
+	}
+
+	template<class T>
+	inline bool AVLTree<T>::empty() const
+	{
+		return size_ == 0;
 	}
 
 	template<class T>
