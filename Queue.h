@@ -1,7 +1,7 @@
 #ifndef QUEUE_H_
 #define QUEUE_H_
 
-#include "../generic_component/List.h"
+#include "List.h"
 
 namespace MyDataStruct
 {

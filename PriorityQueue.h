@@ -1,7 +1,7 @@
 #ifndef PRIORITY_QUEUE_H_
 #define PRIORITY_QUEUE_H_
 
-#include "../generic_component/Sort.h"
+#include "Sort.h"
 
 namespace MyDataStruct
 {

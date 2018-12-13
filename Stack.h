@@ -1,7 +1,7 @@
 #ifndef STACK_H_
 #define STACK_H_
 
-#include "../generic_component/List.h"
+#include "List.h"
 
 namespace MyDataStruct
 {
