@@ -20,13 +20,17 @@ namespace MyDataStruct
 			return;
 		}
 		for (auto i = begin; i != end; ++i) {
+			bool is_end = true;
 			for (auto j = begin+1; j != end - (i-begin); ++j) {
 				if (*j<*(j-1))
 				{
 					swap(*(j-1), *j);
+					//is_end = false;
 				}
 			}
-
+			if (is_end) {
+				return;
+			}
 		}
 	}
 

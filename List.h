@@ -157,7 +157,6 @@ namespace MyDataStruct
 		typedef ListIterator<T> iterator;
 		typedef ConstListIterator<T> const_iterator;
 		typedef int size_type;
-		typedef ListNode<T>* value_type;
 		iterator begin();
 		iterator end();
 		const_iterator begin() const;

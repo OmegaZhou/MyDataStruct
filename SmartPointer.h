@@ -52,6 +52,7 @@ namespace MyDataStruct
 		}
 		this->data_ = i.data_;
 		this->count_ = i.count_;
+		return *this;
 	}
 	template<class T>
 	inline T & SmartPointer<T>::operator*()
