@@ -32,8 +32,10 @@ namespace MyDataStruct
 	template<class T>
 	inline PriorityQueue<T>::~PriorityQueue()
 	{
-		delete[] mem_;
-		mem_ = nullptr;
+		if (mem_) {
+			delete[] mem_;
+			mem_ = nullptr;
+		}
 	}
 	template<class T>
 	inline const T & PriorityQueue<T>::top() const

@@ -17,7 +17,7 @@ namespace MyDataStruct
 		ListNode(const T& data) :  prev_(nullptr), next_(nullptr){
 			data_ = new T(data);
 		}
-		ListNode(const ListNode<T>& node) : data(node.data_), prev_(node.prev_), next_(node.next_)
+		ListNode(const ListNode<T>& node) : data_(node.data_), prev_(node.prev_), next_(node.next_)
 		{}
 		T* data_;
 		ListNode* prev_;
@@ -145,7 +145,7 @@ namespace MyDataStruct
 		return *(ListIterator<T>::node_->data_);
 	}
 
-	//The class template is used like stl::list; 
+	//The class template is used like stl::list;
 	template<class T>
 	class List
 	{
@@ -225,7 +225,7 @@ namespace MyDataStruct
 		ListNode<T>* new_node = new ListNode<T>(value);
 		if (new_node == nullptr) {
 			std::cout << "Memory application is failed" << std::endl;
-			exit(1);
+			return end();
 		}
 		if (position.node_->prev_) {
 			position.node_->prev_->next_ = new_node;
@@ -323,7 +323,7 @@ namespace MyDataStruct
 		len_ = 0;
 		end_->prev_ = nullptr;
 		node_ = end_;
-		
+
 	}
 
 	template<class T>
@@ -349,7 +349,6 @@ namespace MyDataStruct
 		node_ = new ListNode<T>();
 		if (node_ == nullptr) {
 			std::cout << "Memory application is failed" << std::endl;
-			exit(1);
 		} else {
 			end_ = node_;
 			len_ = 0;
@@ -362,7 +361,6 @@ namespace MyDataStruct
 		node_ = new ListNode<T>(0);
 		if (node_ == nullptr) {
 			std::cout << "Memory application is failed" << std::endl;
-			exit(1);
 		} else {
 			end_ = node_;
 		}
@@ -377,7 +375,6 @@ namespace MyDataStruct
 		node_ = new ListNode<T>();
 		if (node_ == nullptr) {
 			std::cout << "Memory application is failed" << std::endl;
-			exit(1);
 		} else {
 			end_ = node_;
 			len_ = 0;
